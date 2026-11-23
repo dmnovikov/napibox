@@ -1,0 +1,4 @@
+<!doctype html>
+<html lang="ru"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>napibox — сообщение</title>
+<style>:root{font:17px system-ui,sans-serif;color:#20342c;background:#f3f5ef}*{box-sizing:border-box}body{margin:0;padding:24px}main{max-width:900px;margin:40px auto}a{color:#285d3c}h1{font-size:32px;letter-spacing:-1px}p{line-height:1.5;color:#607267}pre{white-space:pre-wrap;overflow-wrap:anywhere;margin:24px 0;background:white;border:1px solid #dce5d9;border-radius:16px;padding:24px;font:16px/1.65 ui-monospace,monospace;tab-size:4}small{color:#607267}</style>
+<main><a href="/">napibox.</a><h1>Сообщение</h1>{{if .Encrypted}}<p>Сообщение расшифровано после ввода PIN-кода.</p>{{end}}<pre id="message-text">{{.Text}}</pre><small>Ссылка доступна до {{.Expires}}. После этого сообщение удаляется автоматически.</small></main></html>

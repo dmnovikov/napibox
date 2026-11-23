@@ -1,0 +1,32 @@
+[Unit]
+Description=napibox intranet file sharing
+After=network.target
+
+[Service]
+Type=simple
+User=napibox
+Group=napibox
+StateDirectory=napibox
+StateDirectoryMode=0700
+WorkingDirectory=/var/lib/napibox
+Environment=NAPIBOX_DATA=/var/lib/napibox/data
+EnvironmentFile=/etc/napibox/napibox.env
+ExecStart=/opt/napibox/current/napibox
+Restart=on-failure
+RestartSec=3
+UMask=0077
+NoNewPrivileges=true
+AmbientCapabilities=CAP_NET_BIND_SERVICE
+CapabilityBoundingSet=CAP_NET_BIND_SERVICE
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ProtectKernelTunables=true
+ProtectKernelModules=true
+ProtectControlGroups=true
+RestrictSUIDSGID=true
+RestrictAddressFamilies=AF_INET AF_INET6 AF_UNIX
+ReadWritePaths=/var/lib/napibox
+
+[Install]
+WantedBy=multi-user.target
